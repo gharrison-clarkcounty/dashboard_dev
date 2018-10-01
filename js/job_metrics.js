@@ -69,7 +69,7 @@ function serverJobs(){
                     ${jobsDesc[i].name}
                 </div>
             </div>
-        `)
+        `);
     };
     $('.select-jobs').html(jobNames.join(''));
     $('.server-job-descriptions').html(jobsHTML.join('<br>'));
