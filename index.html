@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="GISMO Dashboard Version 2">
+        <meta name="author" content="Gary Harrison">
+        <!--jquery & popper-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <!--Moment.js-->
+        <script src="js/moment/moment.min.js"></script>
+        <!--Chart.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+        <!-- Custom GISMO Scripts -->
+        <script src="js/GISMO/ago_metrics.js"></script>
+    </head>
+    
+    <body class="bg-dark">
+        <!--Navbar-->
+
+        <!--/Navbar-->
+        <nav class="navbar navbar-dark bg-primary flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">GISMO Team Dashboard</a>
+        </nav>
+        <!--Main Div-->
+        <div class="container-fluid text-white">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block sidebar border-right border-bottom border-primary">
+                    <div class="sidebar-sticky">
+                        <div class="border-bottom border-primary">
+                            <br>
+                            <p class="text-center"><img src="images/cc_logo.png" width="100" height="100"></p>
+                        </div>
+                        <div class="border-bottom border-primary">
+                            <br>
+                            <ul class="list-unstyled">
+                                <li><a href="#" style="text-decoration:none" class="text-white"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="server-jobs.html" style="text-decoration:none" class="text-white"><i class="fab fa-python"></i> Server Jobs <span class="badge badge-danger job-error-badge"></span></a></li>
+                            </ul>
+                            <br>
+                        </div>
+                        <!--Weather forecast-->
+                        <div class="text-center">
+                            <h4>Weather Forecast</h4>
+                            <p id="wx-timeperiod-0"></p>
+                            <div id="wx-icon-0"></div>
+                            <p id="wx-temp"></p>
+                            <p id="wx-wind"></p>
+                            <p id="wx-detailed-fc"></p>
+                            <p id="wx-time" class="text-truncate"></p>
+                        </div>
+                    </div>
+                </nav>
+                <!--Primary body content-->
+                <main class="col-md-10 ml-sm-auto col-lg-10 px-4" role="main">
+                    <div class="row">
+                        <h4 class="service_check_time"></h4>
+                        <!--GISGATE service response times table-->
+                        <div class="table-responsive" id="services-table">
+                            <table class="table table-sm text-center table-bordered">
+                                <thead style="display:none">
+                                    <tr>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                        <th style="width:10%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ab142">AB142</td>
+                                        <td class="AdoptedTrails">AdpTrails</td>
+                                        <td class="Address">Address</td>
+                                        <td class="AGParcel">AGParcel</td>
+                                        <td class="airportheight">AirHeight</td>
+                                        <td class="AirZone">AirZone</td>
+                                        <td class="Annotation">Anno</td>
+                                        <td class="AssessorAnno">AsAnno</td>
+                                        <td class="AssessorMap">AsMap</td>
+                                        <td class="basemap">basemap</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="Cities">Cities</td>
+                                        <td class="communitydistricts">CommDist</td>
+                                        <td class="con2016_2ft">Con16 2ft</td>
+                                        <td class="daqm">daqm</td>
+                                        <td class="designoverlays">DesOvlay</td>
+                                        <td class="Drainage">Drainage</td>
+                                        <td class="Easement">Easement</td>
+                                        <td class="facilities">facilities</td>
+                                        <td class="filters">filters</td>
+                                        <td class="footprints">footprints</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="HistoricSites">HistSites</td>
+                                        <td class="MajorProjects">MajorProj</td>
+                                        <td class="MapTips">MapTips</td>
+                                        <td class="NSP">NSP</td>
+                                        <td class="Pavement">Pavement</td>
+                                        <td class="PFNA">PFNA</td>
+                                        <td class="PlanedLandUse">PLU</td>
+                                        <td class="PointOfInterest">POI</td>
+                                        <td class="QueryLayer">QueryLyr</td>
+                                        <td class="RightOfWay">ROW</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="RollClose">RollClose</td>
+                                        <td class="Sales_view">SalesVw</td>
+                                        <td class="scl">SCL</td>
+                                        <td class="SoilsGuideline">Soils</td>
+                                        <td class="Transportation">Transpt</td>
+                                        <td class="UseSeperation">UseSep</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- ArcGIS Server Stats Graph -->
+                    <hr style="background-color:#0066ff">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="text-center">ArcGIS Server Stats <small>Total map images created in the last 30 days</small></h4>
+                            <div>
+                                <canvas id="ArcGIS-Server-30-Day-Hits" height="250" width="700"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="text-center donut-title"></h4>
+                            <br>
+                            <div>
+                                <canvas id="donut-hit-chart" height="250" width="500"></canvas>
+                            </div>
+                            <div class="donut-hit-legend text-center">
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!--/ArcGIS Server Stats Graph-->
+
+                    <!-- 2nd Row -->
+                    <hr style="background-color:#0066ff">
+                    <div class="row mt-3">
+                        <!-- Services Monitor -->
+                        <div class="col-md-4">
+                            <h5 class="text-center">Services Monitor</h5>
+                            <div style="overflow-y: scroll; overflow-x: hidden;height: 300px">
+                                <div id="services-monitor"></div>
+                            </div>
+                        </div>
+
+                        <!-- Service Metrics -->
+                        <div class="col-md-4">
+                            <h5 class="text-center gui-chart-title"></h5>
+                            <div>
+                                <canvas id="odow-gui-chart" width="500" height="250"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Service Metrics -->
+                        <div class="col-md-4">
+                            <h5 class="text-center odow-service-title"></h5>
+                            <div>
+                                <canvas id="odow-service-chart" width="500" height="250"></canvas>
+                            </div>
+                                
+                        </div>
+                    </div>
+                    <hr style="background-color:#0066ff">
+                    <!-- 3rd Row -->
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <h5 class="text-center">ServiceNow Stats Year-to-Date</h5>
+                            <p class="sn-date text-center">...</p>
+                            <div style="height:250px">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <h3 class="display-6"><i class="fa fa-user"></i> Customer Service:<span class="sn-cs text-warning"> ...</span></h3>
+                                    </li>
+                                    <hr style="background-color:white">
+                                    <li>
+                                        <h3 class="display-6"><i class="fa fa-database"></i> Data Warehouse:<span class="sn-dw text-warning"> ...</span></h3>
+                                    </li>
+                                    <hr style="background-color:white">
+                                    <li>
+                                        <h3 class="display-6"><i class="fa fa-road"></i> Street Centerline:<span class="sn-scl-feat text-warning"> ...</span></h3>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="text-center">Public Customer Service Earnings (Year-to-Date)</h5>
+                            <p class="text-center" id="pts-date"></p>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <canvas id="pts-pie-chart"></canvas>
+                                </div>
+                                <div class="col-md-5 align-self-center">
+                                    <ul class="list-unstyled">
+                                        <li id="leah-cs"></li>
+                                        <li id="ed-cs"></li>
+                                        <li id="john-cs"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- AGO Credits -->
+                        <div class="col-md-4 text-center">
+                                <h5>ArcGIS Online Credits</h5>
+                                <div style="height:300px">
+                                    <span class="ago_credits_text"></span>
+                                    <br><br>
+                                    <span class="ago_credits"></span>
+    
+                                </div>
+                            </div>
+                    </div>
+
+
+                </main>
+                <!--/Primary body content-->
+            </div>
+        </div>
+        <!--/Main Div-->
+
+
+
+
+    </body>
+</html>
