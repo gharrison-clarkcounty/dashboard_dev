@@ -57,13 +57,14 @@ function serverJobs(){
         jobNames.push(`<a class="dropdown-item" href="#${jobsDesc[i].name}">${jobsDesc[i].name}</a>`);
     };
     // Card color changes based on time
+    eMessage = '';
     for(i=0;i<jobsDesc.length;i++){
         if(jobsDesc[i].status == 'ok'){cardColor = 'text-light bg-success'}
-        else if(jobsDesc[i].status == 'error'){cardColor = 'text-light bg-danger'}
+        else if(jobsDesc[i].status == 'error'){cardColor = 'text-light bg-danger';eMessage = jobsDesc[i].message}
         else{cardColor = 'text-light bg-secondary'};
         jobsGrid.push(`
             <div class="card ${cardColor} mb-3" style="display:inline-block">
-                <div class="card-body"  data-toggle="tooltip" data-html="true" title="${jobsDesc[i].description}">
+                <div class="card-body"  data-toggle="tooltip" data-html="true" title="${eMessage}">
                     ${jobsDesc[i].name}
                 </div>
             </div>
