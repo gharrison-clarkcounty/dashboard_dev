@@ -61,11 +61,9 @@ function serverJobs(){
         if(jobsDesc[i].status == 'ok'){cardColor = 'text-light bg-success'}
         else if(jobsDesc[i].status == 'error'){cardColor = 'text-light bg-danger'}
         else{cardColor = 'text-light bg-secondary'};
-        if(jobsDesc[i].message == null){var eMessage = ''}
-        else{var eMessage = jobsDesc[i].message};
         jobsGrid.push(`
             <div class="card ${cardColor} mb-3" style="display:inline-block">
-                <div class="card-body"  data-toggle="tooltip" data-html="true" title="${eMessage}">
+                <div class="card-body"  data-toggle="tooltip" data-html="true" title="${jobsDesc[i].description}">
                     ${jobsDesc[i].name}
                 </div>
             </div>
