@@ -59,7 +59,7 @@ function serverJobs(){
     // Card color changes based on time
     eMessage = '';
     for(i=0;i<jobsDesc.length;i++){
-        if(jobsDesc[i].status == 'ok'){cardColor = 'text-light bg-success'}
+        if(jobsDesc[i].status == 'ok'){cardColor = 'text-light bg-success';eMessage = ''}
         else if(jobsDesc[i].status == 'error'){cardColor = 'text-light bg-danger';eMessage = jobsDesc[i].message}
         else{cardColor = 'text-light bg-secondary'};
         jobsGrid.push(`
