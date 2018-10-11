@@ -62,4 +62,4 @@ function jobsCalendar(){
             $('#calendarModal').modal();
         }
     })
-}
+};

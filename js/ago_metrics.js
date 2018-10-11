@@ -709,4 +709,16 @@ function ptsPieChart(){
     document.getElementById('ed-cs').innerHTML = '<i class="fa fa-circle" style="color:#4caf50"></i> Ed: $' + edSum.toLocaleString();
     document.getElementById('john-cs').innerHTML = '<i class="fa fa-circle" style="color:#249cd8"></i> John: $' + johnSum.toLocaleString();
 };
+//----------------------------------------------------------------------------------------------
+// Server Job Error Badge
+$.getJSON('https://ccgisfiles01m:5000/query/allserverjobs/descriptions',function(data){
+    jobs = data.result;
+    var errorNum = 0;
+    for(i=0; i < jobs.length; i++){
+        if(jobs[i].status == 'error'){
+            errorNum++;
+        };
+    };
+    $('.job-error-badge').html('2');
+});
 
