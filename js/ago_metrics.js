@@ -717,8 +717,10 @@ $.getJSON('https://ccgisfiles01m:5000/query/allserverjobs/descriptions',function
     for(i=0; i < jobs.length; i++){
         if(jobs[i].status == 'error'){
             errorNum++;
-        };
+            $('.job-error-badge').html(errorNum);
+        }else{
+            $('.job-error-badge').html('');
+        }
     };
-    $('.job-error-badge').html('2');
 });
 
